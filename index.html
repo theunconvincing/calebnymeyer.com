@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href='https://fonts.googleapis.com/css?family=Exo' rel='stylesheet' type='text/css'>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no">
+	<title>Caleb Nymeyer</title>
+	<style>
+
+		body {
+			margin:0;
+			padding:10px 0;
+			overflow:hidden;
+		}
+
+		#top {
+			width:100%;
+			margin:0 auto;
+			height:80px;
+			z-index:100;
+		}
+
+		#name,#menu1,#menu2,#menu3,#menu4 {
+			cursor:pointer;
+			font-family:exo;
+		}
+
+		#name {
+			width:828px;
+			height:80px;
+			display:inline-block;
+			margin-left:calc(50% - 414px);
+		}
+
+		#name img {
+			height:80px;
+			width:828px;
+		}
+
+		#top ul {
+			margin-left:-40px;
+			margin-top:6px;
+			margin-bottom:0px;
+			border-top:2px solid #d1d5d6;
+			border-bottom:2px solid #d1d5d6;
+			overflow:hidden;
+			z-index:60;
+		}
+
+		#top ul li {
+			list-style:none;
+			float:left;
+			width:calc(25% - 2px);
+			text-align:center;
+			border-left:2px solid #d1d5d6;
+		}
+
+		#top ul li h1 {
+			margin:5px 0;
+		}
+
+		#top ul li:nth-child(1) {
+			border-left:2px solid transparent;
+		}
+
+		#content0,#content1,#content2,#content3,#content4 {
+			position:absolute;
+			top:156px; /*top:160; for Firefox*/
+			height:calc(100% - 151px);
+			width:100%;
+			overflow-y:scroll;
+			overflow-x:hidden;
+			font-family:Tahoma, Geneva, sans-serif;
+
+			-webkit-transition: .5s; 
+			-moz-transition: .5s; 
+			-o-transition: .5s; 
+			-ms-transition: .5s; 
+			transition: .5s;
+		}
+
+		#content1,#content2,#content3,#content4 {
+			left:100%;
+		}
+
+		#content0, x:-moz-any-link, x:default { 
+			top:160px; 
+		}
+
+		#content1, x:-moz-any-link, x:default { 
+			top:160px; 
+		}
+
+		#content2, x:-moz-any-link, x:default { 
+			top:160px; 
+		}
+
+		#content3, x:-moz-any-link, x:default { 
+			top:160px; 
+		}
+
+		#content4, x:-moz-any-link, x:default { 
+			top:160px; 
+		}
+
+		#content0 {
+			z-index:10;
+			left:0;
+			background:white;
+		}
+
+		#content1 {
+			z-index:20;
+			background:white;
+		}
+
+		#content2 {
+			z-index:30;
+			background:white;
+		}
+
+		#content3 {
+			z-index:40;
+			background:white;
+		}
+
+		#content4 {
+			z-index:50;
+			background:white;
+		}
+
+		#content0 img {
+			width:100%;
+		}
+
+		#content1 img {
+			width:100%;
+		}
+
+		#content2 .section,#content3 .section {
+			width:20%;
+			float:left;
+		}
+
+		#content4 .section {
+			width:15%;
+			float:left;
+			padding-left:1.5%;
+			padding-right:0;
+		}
+
+		#content2 .section img,#content3 .section img,#content4 .section img {
+			width:100%;
+		}
+
+		.content p {
+			padding:.5% 1.5%;
+			margin:0;
+			font-size:1.47em;
+			line-height:1.1em;
+			text-align:justify;
+		}
+
+		@media screen and (max-width: 828px) {
+
+			#name {
+				width:550px;
+				height:53.14px;
+				margin-left:calc(50% - 275px);
+			}
+
+			#name img {
+				width:550px;
+				height:53.14px;
+			}
+
+			#content0,#content1,#content2,#content3,#content4 {
+				position:absolute;
+				top:130px; /*top:160; for Firefox*/
+				left:100%;
+				height:calc(100% - 130px);
+
+				-webkit-transition: .5s; 
+				-moz-transition: .5s; 
+				-o-transition: .5s; 
+				-ms-transition: .5s; 
+				transition: .5s;
+			}
+
+			#content0, x:-moz-any-link, x:default { 
+				top:134px; 
+			}
+
+			#content1, x:-moz-any-link, x:default { 
+				top:134px; 
+			}
+
+			#content2, x:-moz-any-link, x:default { 
+				top:134px; 
+			}
+
+			#content3, x:-moz-any-link, x:default { 
+				top:134px; 
+			}
+
+			#content4, x:-moz-any-link, x:default { 
+				top:134px; 
+			}
+
+			#content0 {
+				left:0;
+			}
+
+			#content0 img {
+				margin-top:0px;
+				width:130%;
+			}
+
+			#content2 .section,#content3 .section {
+				width:33.33%;
+				float:left;
+			}
+
+			#content4 .section {
+				width:15%;
+				float:left;
+				padding-left:1.5%;
+				padding-right:0;
+			}
+		}
+
+		@media screen and (max-width: 550px) {
+
+			body {
+				overflow:hidden;
+			}
+
+			#name {
+				width:300px;
+				height:29px;
+				display:inline-block;
+				margin-left:calc(50% - 150px);
+			}
+
+			#name img {
+				width:300px;
+				height:29px;
+			}
+
+			#top ul li h1 {
+				font-size:1.2em;
+				padding:3px 0;
+			}
+
+			#content0,#content1,#content2,#content3,#content4 {
+				top:95px; 
+				height:calc(100% - 88px);
+			}
+
+			#content0, x:-moz-any-link, x:default { 
+				top:99px; 
+			}
+
+			#content1, x:-moz-any-link, x:default { 
+				top:99px; 
+			}
+
+			#content2, x:-moz-any-link, x:default { 
+				top:99px; 
+			}
+
+			#content3, x:-moz-any-link, x:default { 
+				top:99px; 
+			}
+
+			#content4, x:-moz-any-link, x:default { 
+				top:99px; 
+			}
+
+			#content0 {
+				z-index:10;
+				left:0;
+				background:white;
+			}
+
+			#content0 img {
+				transform:scale(2.5);
+				margin-top:146px;
+				width:350px;
+			}
+
+			#content2 .section,#content3 .section {
+				width:100%;
+				float:left;
+			}
+
+			#content4 .section {
+				width:100%;
+				float:left;
+				padding-left:1.5%;
+				padding-right:0;
+			}
+
+			#content2 .section img,#content3 .section img,#content4 .section img {
+				width:100%;
+			}
+
+			.content p {
+				padding:.7% 1.5%;
+				margin:0;
+				font-size:1.2em;
+				line-height:1.1em;
+				text-align:justify;
+			}
+		}
+		
+	</style>
+	<script>
+
+		function link0() {
+			var v = document.getElementById("content0");
+			var w = document.getElementById("content1");
+			var x = document.getElementById("content2");
+			var y = document.getElementById("content3");
+			var z = document.getElementById("content4");
+
+			v.style.left = "0%";
+			w.style.left = "100%";
+			x.style.left = "100%";
+			y.style.left = "100%";
+			z.style.left = "100%";
+		}
+
+		function link1() {
+			var v = document.getElementById("content0");
+			var w = document.getElementById("content1");
+			var x = document.getElementById("content2");
+			var y = document.getElementById("content3");
+			var z = document.getElementById("content4");
+
+			v.style.left = "0%";
+			w.style.left = "0%";
+			x.style.left = "100%";
+			y.style.left = "100%";
+			z.style.left = "100%";
+
+
+		}
+
+		function link2() {
+			var v = document.getElementById("content0");
+			var w = document.getElementById("content1");
+			var x = document.getElementById("content2");
+			var y = document.getElementById("content3");
+			var z = document.getElementById("content4");
+
+			v.style.left = "0%";
+			w.style.left = "0%";
+			x.style.left = "0%";
+			y.style.left = "100%";
+			z.style.left = "100%";
+
+		}
+
+		function link3() {
+			var v = document.getElementById("content0");
+			var w = document.getElementById("content1");
+			var x = document.getElementById("content2");
+			var y = document.getElementById("content3");
+			var z = document.getElementById("content4");
+
+			v.style.left = "0%";
+			w.style.left = "0%";
+			x.style.left = "0%";
+			y.style.left = "0%";
+			z.style.left = "100%";
+
+		}
+
+		function link4() {
+			var v = document.getElementById("content0");
+			var w = document.getElementById("content1");
+			var x = document.getElementById("content2");
+			var y = document.getElementById("content3");
+			var z = document.getElementById("content4");
+
+			v.style.left = "0%";
+			w.style.left = "0%";
+			x.style.left = "0%";
+			y.style.left = "0%";
+			z.style.left = "0%";
+		}
+
+		if(navigator.userAgent.toLowerCase().indexOf('firefox') > -1)
+		{
+			var v = document.getElementById("content0");
+			var w = document.getElementById("content1");
+			var x = document.getElementById("content2");
+			var y = document.getElementById("content3");
+			var z = document.getElementById("content4");
+
+			v.style.top = "160px";
+			w.style.top = "160px";
+			x.style.top = "160px";
+			y.style.top = "160px";
+			z.style.top = "160px";
+		}
+
+	</script>
+</head>
+<body>
+	<div id="top">
+		<div id="name" onclick="link0()">
+			<img id="name_horizontal" src="img/menus/name.svg" />
+		</div>
+		<ul>
+			<li id="menu1" class="nav_links" class="" onclick="link1()">
+				<h1>about</h1>
+			</li>
+			<li id="menu2" class="nav_links" class="" onclick="link2()">
+				<h1>websites</h1>
+			</li>
+			<li id="menu3" class="nav_links" class="" onclick="link3()">
+				<h1>graphics</h1>
+			</li>
+			<li id="menu4" class="nav_links" class="" onclick="link4()">
+				<h1>contact</h1>
+			</li>
+		</ul>
+	</div>
+	<div id="content0" class="content">
+		<img src="img/me.jpg" />
+	</div>
+	<div id="content1" class="content">
+		<p class="wrapper_class">
+			Caleb Nymeyer is a web developer and multimedia designer currently residing in Vancouver Washington. He graduated from Washington State University Vancouver with a Bachelor of Arts in Digital Technology and Culture (DTC). For those who are wondering, DTC is what graduates like to call "an all encompassing multimedia degree." While there, Caleb acquired a specialty in [creative] Web Development and Graphic Design. However, he possesses many skills regarding various different multimedia technologies.
+		</p>
+		<p class="wrapper_class">
+			When Caleb isn't bossing it up in the [creative] technology field, he enjoyes a wide range of pastimes including, but not limited to and in no particular order, Cycling, Mountain Biking, Rock Climbing, Hiking, Trail Running (most of the time City Running is the only option though), Parkour and Free Running, Soccer, Ultimate Frisbee (Ultimate is and always will be beter than Soccer though), Kayaking (Ocean Kayaking is the best, but River Kayaking is a very close second), White Water Rafting, Swimming, Longboarding, playing Video Games, watching Movies, eating food, and drinking good old H2O (one of my uncles calls me a "water guy").
+		</p>
+		<p class="wrapper_class">
+			Caleb was born in Pomona California (so he's a SoCal boy by birth) to his mother and father, about 2.5 years behind their fourth child. Being a SoCal boy by birth is probably about as close as he's ever going to get to being a true Califorian because six months later his family moved to Prescott, Arizona. There he grew to become a scrawny little kid. At the ripe old age of 3 years, 1 month, and 11 days, he met the only younger sibling he has ever had. Approximately three years later he and his family moved again. This time Kodiak, Alaska was their destination. 
+		</p>
+		<p class="wrapper_class">
+			In Alaska, Caleb repeated the 2nd grade, created the first of many of his lifelong friendships, developed a love for the outdoors, discovered a passion for fitness, took his drivers license test twice, competed in Cross Country and Track, left that scrawny little kid in the dust, drove his first truck into the ground, ran thousands of miles and walked thousands more, and graduated from high school.
+		</p>
+		<p class="wrapper_class">
+			Subsequently, Caleb moved to Vancouver, Washington where he began attending the local community college. Unlike his friends, he spent his Summers back in Alaska, working. He had a 7:30 to 5:00 job (7:30 to 5:00 was the expectation, but Caleb often worked as many hours possible) working with lawn mowers and dirt. He once heard someone say, "Everyone needs to have a Summer job they dislike. It helps them mature and appriciate the really good jobs they have later in life." It was then when he realized that he actually really liked his job. His only regret is that it consumed so much of his time. 
+		</p>
+		<p class="wrapper_class">
+			After two years Caleb earned his Associates degree and transfered to Washington State University Vancouver. He had no idea what degree to pursue. Fourtunately, he discovered Digital Technology and Culture (DTC). It sounds complicated, but it's really not. It's named appropriately because the degree is all about looking at where Digital Technology AND Culture meet. That was the focus, attempting to study and create meaningful interactions between a human and a biologicaly inanimate object.
+		</p>
+
+		<p class="wrapper_class">
+			Additionally, within the degree was the program of Creative Media and Digital Culture (CMDC). With that, he learned to create things that blur the line between Creative Media AND Digital Culture. So, between the program and the degree, Caleb studied, experimented with, and created things that focus on where all four cross. That is what he is concerned with.
+		</p>
+
+		<p class="wrapper_class">
+			So that's it, Caleb in 'a nutshell.'
+		</p>
+	</div>
+	<div id="content2" class="content">
+		<p class="wrapper_class">
+			Caleb thinks he's pretty good at Web Development, but he's also a modest little stinker.
+		</p>
+
+		<div class="section">
+			<a href="http://dtc-wsuv.org/cnymeyer/isea/" target="_blank">
+				<div class="ywca">
+					<img src="img/work/isea.svg" />
+				</div>
+			</a>
+		</div>
+
+		<div class="section">
+			<a href="http://dtc-wsuv.org/projects/ywca100/" target="_blank">
+				<div class="ywca">
+					<img src="img/work/ywca.svg" />
+				</div>
+			</a>
+		</div>
+		<div class="section">
+			<a href="http://dtc-wsuv.org/cnymeyer/filterbubble/" target="_blank">
+				<div class="filterbubble">
+					<img src="img/work/filterbubble.svg" />
+				</div>
+			</a>
+		</div>
+		<div class="section">
+			<a href="http://dtc-wsuv.org/cnymeyer/anonymousbeginnings/" target="_blank">
+				<div class="anon">
+					<img src="img/work/anon.svg" />
+				</div>
+			</a>
+		</div>
+		<div class="section">
+			<a href="http://dtc-wsuv.org/cnymeyer/visualnarrative/" target="_blank">
+				<div class="visualnarrative">
+					<img src="img/work/tv.svg" />
+				</div>
+			</a>
+		</div>
+		<div class="section">
+			<a href="http://dtc-wsuv.org/cnymeyer/typography/" target="_blank">
+				<div class="run">
+					<img src="img/work/run.svg" />
+				</div>
+			</a>
+		</div>
+		<div class="section">
+			<a href="http://dtc-wsuv.org/cnymeyer/narrative2/" target="_blank">
+				<div class="tangledfrozen">
+					<img src="img/work/narrative2.svg" />
+				</div>
+			</a>
+		</div>
+		<div class="section">
+			<a href="http://dtc-wsuv.org/cnymeyer/placestory/" target="_blank">
+				<div class="placestory">
+					<img src="img/work/placestory.svg" />
+				</div>
+			</a>
+		</div>
+		<div class="section">
+			<a href="http://dtc-wsuv.org/cnymeyer/howto/" target="_blank">
+				<div class="howto">
+					<img src="img/work/howto.svg" />
+				</div>
+			</a>
+		</div>
+		<div class="section">
+			<a href="http://dtc-wsuv.org/cnymeyer/narrative/" target="_blank">
+				<div>
+					<img src="img/work/narrative.svg" />
+				</div>
+			</a>
+		</div>
+	</div>
+	<div id="content3" class="content">
+		<p class="wrapper_class">
+			Caleb also thinks he's 'kind of' good at minimalist Graphic Art. He might be exaggerating a little bit.
+		</p>
+		<div class="section">
+			<div>
+				<img src="img/graphics/followcolor1.gif" />
+			</div>
+		</div>
+		<div class="section">
+			<div>
+				<img src="img/graphics/politics.svg" />
+			</div>
+		</div>
+		<div class="section">
+			<div>
+				<img src="img/graphics/myface.svg" />
+			</div>
+		</div>
+		<div class="section">
+			<div>
+				<img src="img/graphics/ship.svg" />
+			</div>
+		</div>
+		<div class="section">
+			<div>
+				<img src="img/graphics/invertcave.svg" />
+			</div>
+		</div>
+		<div class="section">
+			<div>
+				<img src="img/graphics/angels.svg" />
+			</div>
+		</div>
+
+		<div class="section">
+			<div>
+				<img src="img/graphics/cn.svg" />
+			</div>
+		</div>
+		<div class="section">
+			<div>
+				<img src="img/graphics/diamond.svg" />
+			</div>
+		</div>
+		<div class="section">
+			<div>
+				<img src="img/graphics/arrow.svg" />
+			</div>
+		</div>
+		<div class="section">
+			<div>
+				<img src="img/graphics/elf.svg" />
+			</div>
+		</div>
+		<div class="section">
+			<div>
+				<img src="img/graphics/logo1.svg" />
+			</div>
+		</div>
+		<div class="section">
+			<div>
+				<img src="img/graphics/logo2.svg" />
+			</div>
+		</div>
+		<div class="section">
+			<div>
+				<img src="img/graphics/logo3.svg" />
+			</div>
+		</div>
+		<div class="section">
+			<div>
+				<img src="img/graphics/logo4.svg" />
+			</div>
+		</div>
+		<div class="section">
+			<div>
+				<img src="img/graphics/clouds.svg" />
+			</div>
+		</div>
+		<div class="section">
+			<div>
+				<img src="img/graphics/logo5.svg" />
+			</div>
+		</div>
+		<div class="section">
+			<div>
+				<img src="img/graphics/logo6.svg" />
+			</div>
+		</div>
+		<div class="section">
+			<div>
+				<img src="img/graphics/logo7.svg" />
+			</div>
+		</div>
+		<div class="section">
+			<div>
+				<img src="img/graphics/logo8.svg" />
+			</div>
+		</div>
+		<div class="section">
+			<div>
+				<img src="img/graphics/logo9.svg" />
+			</div>
+		</div>
+		<div class="section">
+			<div>
+				<img src="img/graphics/logo10.svg" />
+			</div>
+		</div>
+		<div class="section">
+			<div>
+				<img src="img/graphics/logo11.svg" />
+			</div>
+		</div>
+		<div class="section">
+			<div>
+				<img src="img/graphics/vikingglobe.svg" />
+			</div>
+		</div>
+		<div class="section">
+			<div>
+				<img src="img/graphics/logo12.svg" />
+			</div>
+		</div>
+		<div class="section">
+			<div>
+				<img src="img/graphics/logo13.svg" />
+			</div>
+		</div>
+		<div class="section">
+			<div>
+				<img src="img/graphics/logo14.svg" />
+			</div>
+		</div>
+		<div class="section">
+			<div>
+				<img src="img/graphics/mt.svg" />
+			</div>
+		</div>
+		<div class="section">
+			<div>
+				<img src="img/graphics/star.svg" />
+			</div>
+		</div>
+		<div class="section">
+			<div>
+				<img src="img/graphics/star2.svg" />
+			</div>
+		</div>
+		<div class="section">
+			<div>
+				<img src="img/graphics/viking.svg" />
+			</div>
+		</div>
+		<div class="section">
+			<div>
+				<img src="img/graphics/w.svg" />
+			</div>
+		</div>
+		<div class="section">
+			<div>
+				<img src="img/graphics/wave.svg" />
+			</div>
+		</div>
+		<div class="section">
+			<div>
+				<img src="img/graphics/z.svg" />
+			</div>
+		</div>
+	</div>
+	<div id="content4" class="content">
+		<p class="wrapper_class">
+			Caleb is no stranger to maintaining a presence on the Internet. You can find him on various different websites doing various different things. If you are so inclined you can even Google him. However, the fastest way to contact him is to send an email to cnymeyer92@gmail.com.
+		</p>
+		<a href="https://www.linkedin.com/pub/caleb-nymeyer/87/50a/a64" target="_blank"><div class="section"><img src="img/socialmedia/in.svg" /></div></a>
+		<a href="https://careers.stackoverflow.com/cv/edit/273093?verified=False#" target="_blank"><div class="section"><img src="img/socialmedia/stack.svg" /></div></a>
+		<a href="https://twitter.com/cnymeyer" target="_blank"><div class="section"><img src="img/socialmedia/twitter.svg" /></div></a>
+		<a href="https://plus.google.com/u/0/113016460513862101119/posts" target="_blank"><div class="section"><img src="img/socialmedia/plus.svg" /></div></a>
+		<a href="https://instagram.com/calebnymeyer/" target="_blank"><div class="section"><img src="img/socialmedia/gram.svg" /></div></a>
+		<a href="https://www.google.com/search?q=caleb+nymeyer&oq=caleb+nymeyer&aqs=chrome..69i57j69i61j69i60l4.2018j0j7&sourceid=chrome&es_sm=91&ie=UTF-8" target="_blank"><div class="section"><img src="img/socialmedia/google.svg" /></div></a>
+	</div>
+</body>
+</html>
